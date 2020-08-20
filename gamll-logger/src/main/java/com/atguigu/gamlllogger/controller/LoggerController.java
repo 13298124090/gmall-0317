@@ -27,9 +27,9 @@ public class LoggerController {
 
         // 2 推送到kafka
         if( "startup".equals(jsonObject.getString("type"))){
-            kafkaTemplate.send(GmallConstants.KAFKA_TOPIC_STARTUP,jsonString);
+            kafkaTemplate.send(GmallConstants.GMALL_TOPIC_START,jsonString);
         }else{
-            kafkaTemplate.send(GmallConstants.KAFKA_TOPIC_EVENT,jsonString);
+            kafkaTemplate.send(GmallConstants.GMALL_TOPIC_EVENT,jsonString);
         }
 
         return "success";
